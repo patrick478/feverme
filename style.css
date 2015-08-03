@@ -1,0 +1,51 @@
+h1 {
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 26.4px;
+    text-align: center;
+
+}
+h3 {
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 15.4px;
+}
+div {
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+div#messagesDiv{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#placeBid{
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body{
+    background-color: #f6e474;
+}

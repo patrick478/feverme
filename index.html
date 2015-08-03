@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+  </head>
+  <body>
+
+  <div id='logo'>
+    <img src = 'logo.png' width='300px' height='100px'>
+  </div>
+
+  <div id = "auction">
+   <h1>Central Coast Mariners 2012/13 signed shirt</h1>
+   <img src = 'shirt.jpg' height='300px'>
+   <br>
+
+   <div id="placeBid">
+        <h3>Place bid:</h3>
+        <input type='text' id='nameInput' placeholder='Name'><br>
+        $<input type='number' id='messageInput' placeholder='100.00'>
+    </div>
+    <br>
+
+
+    <div id='messagesDiv'></div>
+    
+</div>
+
+
+
+
+
+
+    <script>
+      var myDataRef = new Firebase('https://feverme.firebaseio-demo.com/');
+      $('#messageInput').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var name = $('#nameInput').val();
+          var bid = $('#messageInput').val();
+
+          myDataRef.push({name: name, bid: bid});
+          $('#messageInput').val('');
+        }
+      });
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        displayChatMessage(message.name, message.bid);
+      });
+      function displayChatMessage(name, text) {
+        $('<div/>').text('$'+text).prepend($('<em/>').text(name+': ')).prependTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+
+        ref.authWithOAuthRedirect("twitter", function(error) {
+        if (error) {
+          console.log("Login Failed!", error);
+        } else {
+          // We'll never get here, as the page will redirect on success.
+        }
+      });
+    </script>
+  </body>
+</html>
